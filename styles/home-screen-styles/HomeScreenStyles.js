@@ -26,10 +26,9 @@ export const headerStyles = StyleSheet.create({
     },
     homeHeaderCTABtnsContainer: {
         justifyContent: "space-between",
-        width: "200",
         flexDirection: "row",
         alignItems: "center",
-        marginRight: 15
+        marginRight: 20
     },
     homeHeaderCTABtns: {
         width: 30,
