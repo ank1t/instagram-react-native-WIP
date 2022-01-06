@@ -31,7 +31,7 @@ export const headerStyles = StyleSheet.create({
         alignItems: "center",
         marginRight: 20
     },
-    homeHeaderCTABtns: {
+    tripleCTABtns: {
         width: 30,
         height: 30,
         marginHorizontal: 5
@@ -62,9 +62,11 @@ export const headerStyles = StyleSheet.create({
         borderColor: "orange"
     },
     storyTextStyle: {
-        fontSize: 13,
+        fontSize: 12,
+        fontWeight: "600",
         color: "darkgray",
-        textAlign: "center"
+        textAlign: "center",
+        marginTop: 2
     },
     bottomTabContainer: {
         borderTopWidth: 1,
@@ -103,7 +105,7 @@ export const headerStyles = StyleSheet.create({
         fontSize: 12,
         fontWeight: "bold",
         color: "white",
-        marginLeft: 10
+        marginLeft: 5
     },
     postOptionsText: {
         color: "white"
@@ -111,12 +113,24 @@ export const headerStyles = StyleSheet.create({
     postImage: {
         width: "100%",
         height: 400,
-        resizeMode: "contain"
+        resizeMode: "cover",
+        backgroundColor: "white"
+    },
+    postBottomContainer: {
+        marginVertical: 10,
+        marginHorizontal: 5
+    },
+    postActionsContainer: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center"
     },
     postLikes: {
         fontSize: 14,
         fontWeight: "600",
-        color: "white"
+        color: "white",
+        marginLeft: 10,
+        marginTop: 5
     },
     commentContainer: {
         marginTop: 5,
@@ -124,12 +138,12 @@ export const headerStyles = StyleSheet.create({
     },
     commentAuthor: {
         fontSize: 15,
-        fontWeight: "500",
+        fontWeight: "600",
         color: "#EEEEEE"
     },
     commentText: {
         fontSize: 15,
-        fontWeight: "400",
+        fontWeight: "300",
         color: "#DEDEDE"
     }
 })
