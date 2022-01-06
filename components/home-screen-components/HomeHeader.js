@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, View } from 'react-native';
 import { headerStyles } from '../../styles/home-screen-styles/HomeScreenStyles';
+import { headerConfig } from './PostHelper';
 import TripleCTABtns from './TripleCTABtns';
 
 export default function HomeHeader() {
@@ -11,7 +12,7 @@ export default function HomeHeader() {
                 style={headerStyles.homeIconImage}
             />
         </View>
-        <TripleCTABtns/>
+        <TripleCTABtns config={headerConfig}/>
         </>
     )
 }

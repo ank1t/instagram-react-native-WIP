@@ -1,0 +1,200 @@
+{
+  "stories": [
+    {
+        "username": "Add",
+        "image_url": "/assets/images/add-story.png"
+      },
+    {
+      "username": "Twitir",
+      "image_url": "/assets/images/avatar1.png"
+    },
+    {
+      "username": "Raight",
+      "image_url": "/assets/images/avatar2.png"
+    },
+    {
+      "username": "Youghten",
+      "image_url": "/assets/images/avatar3.png"
+    },
+    {
+      "username": "Reamost",
+      "image_url": "/assets/images/avatar4.png"
+    },
+    {
+      "username": "Carating",
+      "image_url": "/assets/images/avatar5.png"
+    },
+    {
+      "username": "Ficheres",
+      "image_url": "/assets/images/avatar6.png"
+    },
+    {
+      "username": "Souldive",
+      "image_url": "/assets/images/avatar7.png"
+    },
+    {
+      "username": "Enwhat",
+      "image_url": "/assets/images/avatar8.png"
+    },
+    {
+      "username": "Toodifer",
+      "image_url": "/assets/images/avatar9.png"
+    },
+    {
+      "username": "Andifear",
+      "image_url": "/assets/images/avatar10.png"
+    },
+    {
+      "username": "Spette",
+      "image_url": "/assets/images/avatar11.png"
+    },
+    {
+      "username": "Cuthich",
+      "image_url": "/assets/images/avatar12.png"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "author": "Twitir",
+      "userAvatar": "/assets/images/avatar1.png",
+      "postImg": "/assets/posts/1.jpeg",
+      "likes": 7483,
+      "comments": {
+        "commentList": [
+          {
+            "author": "Raight",
+            "comment": "Building Insta clone with React Native 🚀. This is will be a fun build. #react-native #dev"
+          },
+          {
+            "author": "Youghten",
+            "comment": "Wow!! this looks great. Super excited about it 📝 🙇 🤝 #pumped #letsgooo"
+          }
+        ],
+        "pagination_tag": "2cwe%4lop"
+      }
+    },
+    {
+      "id": 2,
+      "author": "Raight",
+      "userAvatar": "/assets/images/avatar2.png",
+      "postImg": "/assets/posts/2.jpeg",
+      "likes": 1932,
+      "comments": {
+        "commentList": [
+          {
+            "author": "Twitir",
+            "comment": "Building Insta clone with React Native 🚀. This is will be a fun build. #react-native #dev"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "author": "Youghten",
+      "userAvatar": "/assets/images/avatar3.png",
+      "postImg": "/assets/posts/3.png",
+      "likes": 2344,
+      "comments": {
+        "commentList": [
+          {
+            "author": "Raight",
+            "comment": "Building Insta clone with React Native 🚀. This is will be a fun build. #react-native #dev"
+          },
+          {
+            "author": "Twitir",
+            "comment": "Wow!! this looks great. Super excited about it #pumped #letsgooo"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "author": "Reamost",
+      "userAvatar": "/assets/images/avatar4.png",
+      "postImg": "/assets/posts/4.jpeg",
+      "likes": 5332
+    },
+    {
+      "id": 5,
+      "author": "Carating",
+      "userAvatar": "/assets/images/avatar5.png",
+      "postImg": "/assets/posts/5.jpeg",
+      "likes": 678,
+      "comments": {
+        "commentList": [
+          {
+            "author": "Raight",
+            "comment": "Building Insta clone with React Native 🚀. This is will be a fun build. #react-native #dev"
+          },
+          {
+            "author": "Youghten",
+            "comment": "Wow!! this looks great. Super excited about it 📝 🙇 🤝 #pumped #letsgooo"
+          }
+        ],
+        "pagination_tag": "2cwx4klq"
+      }
+    },
+    {
+      "id": 6,
+      "author": "Twitir",
+      "userAvatar": "/assets/images/avatar6.png",
+      "postImg": "/assets/posts/6.jpeg",
+      "likes": 9663,
+      "comments": {
+        "commentList": [
+          {
+            "author": "Raight",
+            "comment": "Building Insta clone with React Native 🚀. This is will be a fun build. #react-native #dev"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "author": "Raight",
+      "userAvatar": "/assets/images/avatar7.png",
+      "postImg": "/assets/posts/7.jpeg",
+      "likes": 5642,
+      "comments": {
+        "commentList": [
+          {
+            "author": "Twitir",
+            "comment": "Building Insta clone with React Native 🚀. This is will be a fun build. #react-native #dev"
+          },
+          {
+            "author": "Youghten",
+            "comment": "Wow!! this looks great. Super excited about it #pumped #letsgooo"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "author": "Youghten",
+      "userAvatar": "/assets/images/avatar8.png",
+      "postImg": "/assets/posts/8.jpeg",
+      "likes": 7896
+    },
+    {
+      "id": 9,
+      "author": "Reamost",
+      "userAvatar": "/assets/images/avatar9.png",
+      "postImg": "/assets/posts/9.jpeg",
+      "likes": 3223,
+      "comments": {
+        "commentList": [
+          {
+            "author": "Raight",
+            "comment": "Building Insta clone with React Native 🚀. This is will be a fun build. #react-native #dev"
+          },
+          {
+            "author": "Youghten",
+            "comment": "Wow!! this looks great. Super excited about it 📝 🙇 🤝 #pumped #letsgooo"
+          }
+        ],
+        "pagination_tag":"9bfpicml"
+      }
+    }
+  ]
+}
