@@ -145,5 +145,12 @@ export const headerStyles = StyleSheet.create({
         fontSize: 15,
         fontWeight: "300",
         color: "#DEDEDE"
+    },
+    viewAllBtn: {
+        fontSize: 14,
+        fontWeight: "200",
+        color: "lightgray",
+        marginTop: 5
+
     }
 })
