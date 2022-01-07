@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { HOST_URL } from '../../networking/Constants';
 import { headerStyles } from '../../styles/home-screen-styles/HomeScreenStyles';
@@ -6,7 +6,7 @@ import TripleCTABtns from './TripleCTABtns';
 import { postConfig } from './PostHelper';
 import Comments from './Comments';
 
-export default function Post(props) {
+function Post(props) {
     const {
         id,
         author,
@@ -50,3 +50,5 @@ export default function Post(props) {
       </View>
     );
 }
+
+export default memo(Post)

@@ -40,6 +40,7 @@ export default function Home() {
             </View>
             <FlatList 
             data={posts}
+            initialNumToRender={2}
             renderItem={( {item} ) => (
                 <Post post={item}/>
             )}
