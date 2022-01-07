@@ -21,7 +21,7 @@ export const headerStyles = StyleSheet.create({
         marginLeft: 25
     },
     homeIconImage: {
-        width: 120,
+        width: 100,
         height: 50,
         resizeMode: "contain"
     },
@@ -155,5 +155,20 @@ export const headerStyles = StyleSheet.create({
         color: "gray",
         marginTop: 5
 
+    },
+    unreadBadgeContainer: {
+        position: "absolute",
+        left: 15,
+        bottom: 22,
+        backgroundColor: 'red',
+        justifyContent: 'center',
+        alignItems: "center",
+        borderRadius: 25,
+        zIndex: 100,
+        paddingHorizontal: 5
+    },
+    unreadBadgeText: {
+        color: 'white',
+        fontWeight: "600"
     }
 })

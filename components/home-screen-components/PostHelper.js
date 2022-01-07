@@ -16,6 +16,7 @@ export const headerConfig = [
     onPress: (params) => {
         console.log("Header Msgs tapped")
     },
+    shouldShowBadge: true
   },
 ];
 
