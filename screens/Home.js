@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, SafeAreaView, ScrollView, Text, View } from 'react-native';
+import { FlatList, SafeAreaView, ScrollView, StatusBar, Text, View } from 'react-native';
 import BottomTabBar from '../components/home-screen-components/BottomTabBar';
 import HomeHeader from '../components/home-screen-components/HomeHeader';
 import Post from '../components/home-screen-components/Post';
@@ -26,6 +26,7 @@ export default function Home() {
     
     return(
         <SafeAreaView style={headerStyles.screenContainer}>
+        <StatusBar barStyle='light-content'/>
             <View style={headerStyles.headerContainer}>
                 <HomeHeader />
             </View>
