@@ -87,7 +87,10 @@ export const headerStyles = StyleSheet.create({
     postContainer: {
         flex: 1,
         backgroundColor: "black",
-        width: "100%"
+        width: "100%",
+        borderBottomColor: "gray",
+        borderBottomWidth: 0.5,
+        paddingBottom: 5
     },
     postProfileInfoContainer: {
         flexDirection: "row",
@@ -144,12 +147,12 @@ export const headerStyles = StyleSheet.create({
     commentText: {
         fontSize: 15,
         fontWeight: "300",
-        color: "#DEDEDE"
+        color: "white"
     },
     viewAllBtn: {
         fontSize: 14,
-        fontWeight: "200",
-        color: "lightgray",
+        fontWeight: "400",
+        color: "gray",
         marginTop: 5
 
     }
