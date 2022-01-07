@@ -163,9 +163,10 @@ export const headerStyles = StyleSheet.create({
         backgroundColor: 'red',
         justifyContent: 'center',
         alignItems: "center",
-        borderRadius: 25,
+        borderRadius: 30,
         zIndex: 100,
-        paddingHorizontal: 5
+        paddingHorizontal: 5,
+        paddingVertical: 1
     },
     unreadBadgeText: {
         color: 'white',
