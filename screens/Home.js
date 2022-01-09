@@ -24,30 +24,55 @@ export default function Home() {
             setNetworkError)
     }, [])
     
-    return(
-        <SafeAreaView style={headerStyles.screenContainer}>
+    const HomeScreenView = (showStoriesView, showPostsView) => {
+        return ContainerView(showStoriesView, showPostsView)
+    }
+
+    const ContainerView = (showStoriesView, showPostsView) => {
+        return <SafeAreaView style={headerStyles.screenContainer}>
         <StatusBar barStyle='light-content'/>
+        {HeaderView()}
+        {showStoriesView ? StoriesView() : (<></>)}
+        {showPostsView ? PostsView() : (<></>)}
+        {FooterView()}
+        </SafeAreaView>
+    }
+    const HeaderView = () => {
+        return (
             <View style={headerStyles.headerContainer}>
                 <HomeHeader />
             </View>
-            <View style={headerStyles.storiesContainer}>
-                <ScrollView showsHorizontalScrollIndicator={false}
-                horizontal={true}>
-                    {stories.map((element, index) => {
-                        return <Story key={index} element={element}/>    
-                    }
-                    )}
-                </ScrollView>
-            </View>
-            <FlatList 
-            data={posts}
-            initialNumToRender={2}
-            renderItem={( {item} ) => (
-                <Post post={item}/>
+        )
+    }
+
+    const FooterView = () => {
+        return <BottomTabBar/>
+    }
+
+    const StoriesView = () => {
+        return <View style={headerStyles.storiesContainer}>
+        <ScrollView showsHorizontalScrollIndicator={false}
+        horizontal={true}>
+            {stories.map((element, index) => {
+                return <Story key={index} element={element}/>    
+            }
             )}
-            keyExtractor={(item) => item.id}
-            />
-            <BottomTabBar/>
-        </SafeAreaView>
+        </ScrollView>
+    </View>
+    }
+
+    const PostsView = () => {
+        return <FlatList 
+                data={posts}
+                initialNumToRender={2}
+                renderItem={( {item} ) => (
+                    <Post post={item}/>
+                )}
+                keyExtractor={(item) => item.id}
+                />
+    }
+
+    return (
+        HomeScreenView(stories.length != 0, posts.length != 0)
     )
 }

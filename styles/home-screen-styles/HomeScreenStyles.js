@@ -59,7 +59,7 @@ export const headerStyles = StyleSheet.create({
         borderRadius: 35,
         resizeMode: "contain",
         borderWidth: 1,
-        borderColor: "orange"
+        borderColor: "#FF8501"
     },
     storyTextStyle: {
         fontSize: 12,
