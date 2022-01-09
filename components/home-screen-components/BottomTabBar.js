@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { headerStyles } from '../../styles/home-screen-styles/HomeScreenStyles';
 
 export default function BottomTabBar() {
@@ -37,7 +37,8 @@ export default function BottomTabBar() {
             setActiveTab(config.name)
         }}>
             <Image source={activeTab == config.name ? config.active : config.inactive}
-                style={headerStyles.bottomTabImage}
+                style={[headerStyles.bottomTabImage, 
+                activeTab == "PROFILE" && config.name == activeTab ? headerStyles.profilePic(activeTab) : null ]}
             />
         </TouchableOpacity>
     )

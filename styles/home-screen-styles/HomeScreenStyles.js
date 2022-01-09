@@ -171,5 +171,9 @@ export const headerStyles = StyleSheet.create({
     unreadBadgeText: {
         color: 'white',
         fontWeight: "600"
-    }
+    },
+    profilePic: (activeTab = "") => ({
+        borderColor: "white",
+        borderWidth: activeTab === "PROFILE" ? 2 : 0
+    })
 })
