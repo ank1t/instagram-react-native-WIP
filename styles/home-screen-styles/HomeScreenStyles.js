@@ -84,6 +84,11 @@ export const headerStyles = StyleSheet.create({
         height: 30,
         borderRadius: 15
     },
+    emptyPostStoriesContainer: {
+        flex: 1,
+        backgroundColor: "black",
+        width: "100%",
+    },
     postContainer: {
         flex: 1,
         backgroundColor: "black",
