@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { HOST_URL } from '../../networking/Constants';
-import { headerStyles } from '../../styles/home-screen-styles/HomeScreenStyles';
+import { headerStyles } from '../../styles/home-screen/HomeScreenStyles';
 
 export default function Story(props) {
     var {

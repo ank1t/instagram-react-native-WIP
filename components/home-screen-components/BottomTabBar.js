@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { headerStyles } from '../../styles/home-screen-styles/HomeScreenStyles';
+import { headerStyles } from '../../styles/home-screen/HomeScreenStyles';
 
 export default function BottomTabBar() {
     const TabImgsEnum = [

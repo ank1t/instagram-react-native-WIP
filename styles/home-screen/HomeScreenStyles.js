@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { borderColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 export const headerStyles = StyleSheet.create({
     screenContainer: {

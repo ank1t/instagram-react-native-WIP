@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, View } from 'react-native';
-import { headerStyles } from '../../styles/home-screen-styles/HomeScreenStyles';
+import { headerStyles } from '../../styles/home-screen/HomeScreenStyles';
 import { headerConfig } from './PostHelper';
 import TripleCTABtns from './TripleCTABtns';
 

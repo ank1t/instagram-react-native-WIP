@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Image, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native";
-import { elementsThatOverlapOffsets } from "react-native/Libraries/Lists/VirtualizeUtils";
-import { headerStyles } from "../../styles/home-screen-styles/HomeScreenStyles";
+import { headerStyles } from "../../styles/home-screen/HomeScreenStyles";
 
 export default function TripleCTABtns(props) {
   const unreadBadge = (shouldShowBadge) => {

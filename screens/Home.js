@@ -12,7 +12,7 @@ import HomeHeader from "../components/home-screen-components/HomeHeader";
 import Post from "../components/home-screen-components/Post";
 import Story from "../components/home-screen-components/Story";
 import { API_END_POINTS, performGETNetworkReq } from "../networking/Service";
-import { headerStyles } from "../styles/home-screen-styles/HomeScreenStyles";
+import { headerStyles } from "../styles/home-screen/HomeScreenStyles";
 import Loader from "./utility/Loader";
 
 export default function Home() {

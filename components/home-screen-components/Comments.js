@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Text, TouchableOpacity } from "react-native";
 import { View } from "react-native";
-import { headerStyles } from "../../styles/home-screen-styles/HomeScreenStyles";
+import { headerStyles } from "../../styles/home-screen/HomeScreenStyles";
 
 export default function Comments(props) {
   const comments =
