@@ -29,7 +29,7 @@ export default function NewPostForm() {
                     <TextInput placeholder="Write a caption"
                     placeholderTextColor="gray"
                     multiline
-                    style={[newPostStyles.textInput, {marginVertical: 10}]}
+                    style={[newPostStyles.textInput, {marginVertical: 10, marginHorizontal: 10}]}
                     onChangeText={handleChange('caption')}
                     onBlur={handleBlur('caption')}
                     value={values.caption}

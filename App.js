@@ -1,11 +1,7 @@
 import * as React from "react";
 import { View, Text } from "react-native";
-import Home from "./screens/Home";
-import NewPost from "./screens/NewPost";
+import SignedInStack from "./screens/Navigation";
 
 export default function App() {
-  return (
-    // <Home/>
-    <NewPost />
-  );
+  return <SignedInStack/>
 }
