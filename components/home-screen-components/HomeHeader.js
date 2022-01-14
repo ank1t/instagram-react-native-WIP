@@ -12,7 +12,7 @@ export default function HomeHeader() {
                 style={headerStyles.homeIconImage}
             />
         </View>
-        <TripleCTABtns config={headerConfig}/>
+        <TripleCTABtns config={headerConfig} />
         </>
     )
 }

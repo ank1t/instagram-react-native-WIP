@@ -1,11 +1,16 @@
 import React from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { newPostStyles } from '../../styles/new-post/NewPostScreenStyles';
+import { useNavigation } from '@react-navigation/native';
 
 export default function NewPostTitle() {
+    const navigation = useNavigation()
+    
     return(
         <View style={newPostStyles.navBarContainer}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+                navigation.goBack()
+            }}>
                 <Image source={require("../../assets/icons/newPost/back-icon.png")}
                     style={newPostStyles.navBarBackBtn}
                 />

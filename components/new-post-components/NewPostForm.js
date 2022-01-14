@@ -3,6 +3,8 @@ import { Text, TextInput, Image, View, Button } from 'react-native';
 import * as Yup from 'yup';
 import { Formik } from 'formik'
 import { newPostStyles } from '../../styles/new-post/NewPostScreenStyles';
+import { useNavigation } from '@react-navigation/native';
+import validUrl from 'valid-url';
 
 const PLACEHOLDER_IMG = require("../../assets/icons/newPost/upload-placeholder.png")
 
@@ -13,18 +15,22 @@ const uploadPostSchema = Yup.object().shape({
 
 export default function NewPostForm() {
     const [thumbnailUrl, setThumbnailUrl] = useState("")
-
+    const navigation = useNavigation()
+    
     return (
         <Formik 
             initialValues={{caption: "", imageUrl: ""}}
-            onSubmit={(values) => {console.log(values)}}
+            onSubmit={(values) => {
+                console.log(values)
+                navigation.goBack()
+            }}
             validationSchema={uploadPostSchema}
             validateOnMount
         >
         {({handleBlur, handleChange, handleSubmit, values, errors, isValid}) => (
             <>
                 <View style={newPostStyles.imgPreviewCaptionContainer}>
-                    <Image source={thumbnailUrl ? { uri : thumbnailUrl } : PLACEHOLDER_IMG} 
+                    <Image source={ validUrl.isUri(thumbnailUrl) ? { uri : thumbnailUrl } : PLACEHOLDER_IMG} 
                     style={newPostStyles.imgPreview}/>
                     <TextInput placeholder="Write a caption"
                     placeholderTextColor="gray"
