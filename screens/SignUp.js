@@ -8,7 +8,7 @@ import {
   View,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import CTABtnHelpText from "../components/login-components/CTABtnHelpText";
+import CTABtnHelpText, { CTABtnStates } from "../components/login-components/CTABtnHelpText";
 import { loginStyles } from "../styles/login/LoginStyles";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -87,7 +87,11 @@ export default function SignUp() {
         <TouchableOpacity style={loginStyles.forgotPasswordContainer}>
           <Text style={loginStyles.forgotPassword}>Forgot password?</Text>
         </TouchableOpacity>
-        <CTABtnHelpText handleSubmit={handleSubmit} isDisabled={!isValid}/>
+        <CTABtnHelpText 
+          handleSubmit={handleSubmit} 
+          isDisabled={!isValid} 
+          btnState={CTABtnStates.SignUp}
+        />
       </SafeAreaView>
     )}  
     </Formik>
