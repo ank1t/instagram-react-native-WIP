@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Text, TouchableOpacity, View } from 'react-native';
 import { loginStyles } from '../../styles/login/LoginStyles';
 import { useNavigation } from '@react-navigation/native';
+import * as RootNavigation from '../../styles/utility/RootNavigation';
 
 export class CTABtnStates {
     static Login = new CTABtnStates("Login")
@@ -19,9 +20,7 @@ function getCTABtnStates(currentState) {
                 btnTitle: "Log In",
                 promptText: "Don't have an account?",
                 promptCTABtnText: "Sign Up",
-                ctaBtnAction: () => {
-                    useNavigation().push("SignUp")
-                }
+                nextScreen: "SignUp"
             }
             break;
         case "SignUp":
@@ -29,9 +28,7 @@ function getCTABtnStates(currentState) {
                 btnTitle: "Sign up",
                 promptText: "Already have an account?",
                 promptCTABtnText: "Log In",
-                ctaBtnAction: () => {
-                    useNavigation().goBack()
-                }
+                nextScreen: "Login"
             }
             break;
     }
@@ -42,7 +39,7 @@ export default function CTABtnHelpText(props) {
          btnTitle,
          promptText,
          promptCTABtnText,
-         ctaBtnAction } = getCTABtnStates(props.btnState.name)
+         nextScreen } = getCTABtnStates(props.btnState.name)
     const navigation = useNavigation()
     return (
         <>
@@ -60,7 +57,7 @@ export default function CTABtnHelpText(props) {
             <View style={loginStyles.ctaHelperTextContainer}>
                 <Text>{ promptText }</Text>
                 <TouchableOpacity onPress={() => {
-                    navigation.push("SignUp")
+                    RootNavigation.navigate(nextScreen)
                 }}>
                     <Text style={loginStyles.ctaHelperActionText}>{ promptCTABtnText }</Text>
                 </TouchableOpacity>

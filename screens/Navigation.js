@@ -5,6 +5,7 @@ import Home from './Home'
 import NewPost from "./NewPost"
 import Login from './Login'
 import SignUp from './SignUp';
+import { navigationRef } from '../styles/utility/RootNavigation';
 
 const Stack = createStackNavigator()
 const screenOptions = {
@@ -12,7 +13,7 @@ const screenOptions = {
 }
 
 const SignedInStack = () => (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
         <Stack.Navigator 
         initialRouteName="Login"
         screenOptions={screenOptions}
