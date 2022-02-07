@@ -27,8 +27,7 @@ function getCTABtnStates(currentState) {
             return {
                 btnTitle: "Sign up",
                 promptText: "Already have an account?",
-                promptCTABtnText: "Log In",
-                nextScreen: "Login"
+                promptCTABtnText: "Log In"
             }
             break;
     }
@@ -57,7 +56,9 @@ export default function CTABtnHelpText(props) {
             <View style={loginStyles.ctaHelperTextContainer}>
                 <Text>{ promptText }</Text>
                 <TouchableOpacity onPress={() => {
-                    RootNavigation.navigate(nextScreen)
+                    if(nextScreen) {
+                        RootNavigation.navigate(nextScreen)
+                    }
                 }}>
                     <Text style={loginStyles.ctaHelperActionText}>{ promptCTABtnText }</Text>
                 </TouchableOpacity>

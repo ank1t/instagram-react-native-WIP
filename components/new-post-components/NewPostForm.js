@@ -21,7 +21,6 @@ export default function NewPostForm() {
         <Formik 
             initialValues={{caption: "", imageUrl: ""}}
             onSubmit={(values) => {
-                console.log(values)
                 navigation.goBack()
             }}
             validationSchema={uploadPostSchema}
