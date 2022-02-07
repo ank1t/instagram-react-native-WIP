@@ -13,51 +13,36 @@ export const API_END_POINTS = Object.freeze({
   POSTS_ENDPOINT: HOST_URL + POSTS_PATH,
 });
 
-export function performGETNetworkReq(
-  endPoint,
-  setResultHook,
-  setErrorHook) {
+export const performGETNetworkReq = async (endPoint, setResultHook, setErrorHook) => {
   console.log("****** Make GET call ******");
-  fetch(endPoint)
-    .then((res) => {
-      if (res.ok) {
-        return res.json()
-      }
-    })
-    .then(
-      (result) => {
-        setResultHook(result);
-      },
-      (error) => {
-        setErrorHook(error);
-      }
-    );
+  try {
+    const response = await fetch(endPoint)
+    if (response.ok) {
+      const result = await response.json()
+      setResultHook(result)
+      return
+    }
+    setResultHook([])  
+  } catch (error) {
+    setErrorHook(error)
+  }
 }
 
-export function performPOSTNetworkReq(
-  endpoint,
-  payload,
-  setResultHook,
-  setErrorHook) {
-  console.log("****** Make POST call ******");
-  fetch(endpoint, {
-    method: "POST",
-    headers: getHeaders(),
-    body: JSON.stringify(payload)
-  })
-    .then((res) => {
-      if (res.ok) {
-        return res.json()
-      }
+export const performPOSTNetworkReq = async (endpoint, payload, setResultHook, setErrorHook) => {
+  try {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: getHeaders(),
+      body: JSON.stringify(payload)
     })
-    .then(
-      (result) => {
-        setResultHook(result);
-      },
-      (error) => {
-        setErrorHook(error)
-      }
-    );
+    if (response.ok) {
+      const result = await response.json()
+      setResultHook(result)
+      return
+    }
+  } catch (error) {
+    setErrorHook(error)
+  }
 }
 
 function getHeaders() {
