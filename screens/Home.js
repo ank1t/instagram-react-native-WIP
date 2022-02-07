@@ -36,8 +36,11 @@ export default function Home() {
     );
   }, []);
 
-  const HomeScreenView = (showStoriesView, showPostsView) => {
-    return ContainerView(showStoriesView, showPostsView);
+  const HomeScreenView = (stories, posts) => {
+    if (stories && posts && stories.length > 0 && posts.length > 0) {
+      return ContainerView(true, true);  
+    }
+    return ContainerView(false, false)
   };
 
   const ContainerView = (showStoriesView, showPostsView) => {
@@ -91,5 +94,5 @@ export default function Home() {
     </>)
   };
 
-  return HomeScreenView(stories.length != 0, posts.length != 0);
+  return HomeScreenView(stories, posts);
 }

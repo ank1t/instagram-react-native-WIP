@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  Alert,
   Image,
   SafeAreaView,
   Text,
@@ -13,6 +14,8 @@ import { loginStyles } from "../styles/login/LoginStyles";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import Validator from "email-validator";
+import { firebase, db } from  "../firebase";
+import * as RootNavigation from '../styles/utility/RootNavigation';
 
 export default function SignUp() {
   const navigation = useNavigation();
@@ -23,11 +26,34 @@ export default function SignUp() {
     username: Yup.string().min(2).max(20).required(),
     password: Yup.string().required().min(6)
   });
+
+  const getRandomProfilePicture = async () => {
+    const response = await fetch('https://randomuser.me/api')
+    const data = await response.json()
+    return data.results[0].picture.large
+  }
+
+  const onSignUp = async (email, username, password) => {
+    try {
+      const authUser = await firebase.auth().createUserWithEmailAndPassword(email, password)
+      console.log(authUser.user.uid)
+      db.collection('users').doc(authUser.user.email).set({
+        owner_uid: authUser.user.uid,
+        username: username,
+        email: authUser.user.email,
+        profile_picture: await getRandomProfilePicture()
+      })
+      RootNavigation.navigate("Login")
+    } catch (error) {
+      Alert.alert(error.message)
+    }
+  }
+
   return (
     <Formik
         initialValues={{email: "", username: "", password: ""}}
         onSubmit={(values) => {
-            console.log(values)
+            onSignUp(values.email, values.username ,values.password)
         }}
         validationSchema={loginSchema}
         validateOnMount

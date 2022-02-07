@@ -6,6 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  Alert
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import CTABtnHelpText, { CTABtnStates } from "../components/login-components/CTABtnHelpText";
@@ -13,6 +14,7 @@ import { loginStyles } from "../styles/login/LoginStyles";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import Validator from "email-validator";
+import { firebase } from "../firebase"
 
 export default function Login() {
   const navigation = useNavigation();
@@ -22,11 +24,35 @@ export default function Login() {
     username: Yup.string().email().required(),
     password: Yup.string().required().min(6)
   });
+
+  const onLogin = async (email, password) => {
+    try {
+      await firebase.auth().signInWithEmailAndPassword(email, password)
+      console.log("Firebase login successful", email, password)
+    } catch (error) {
+       Alert.alert(
+         "Login failed",
+         error.message + "\n What would you like to do next?",
+         [
+           {
+            text: "Ok",
+            onPress: () => console.log("Do nothing"),
+            style: "cancel"
+           },{
+            text: "Sign Up",
+            onPress: () => navigation.push("SignUp"),
+            style: "default"
+           }
+         ]
+       )
+    }
+  }
+
   return (
     <Formik
         initialValues={{username: "", password: ""}}
         onSubmit={(values) => {
-            console.log(values)
+            onLogin(values.username, values.password)
         }}
         validationSchema={loginSchema}
         validateOnMount
